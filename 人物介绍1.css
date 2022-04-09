@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: -webkit-linear-gradient(to right,#141E30,#141e30,#243B55,#243b55);
+    background: linear-gradient(to right,#141E30,#141e30,#243B55,#243b55);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+.pic{
+    overflow: hidden;
+    position: relative;
+    width: 250px;
+    height: 200px;
+    background-color: pink;
+    float: left;
+    margin-top: 35vh;
+    margin-right: 30px;
+    box-shadow: 0 2px 4px 2px rgb(13, 13, 32);
+}
+.pic:last-child{
+    margin-right: 0;
+}
+.pic:hover .text{
+    animation: move2 1s 1 forwards;
+    animation-delay: 0.2s;
+}
+.pic img{
+    width: 100%;
+    height: 100%;
+}
+.pic .mask{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.pic .mask2{
+    height: 150px;
+    width: 221px;
+    position: absolute;
+    right: -225px;
+    top: 25px;
+    background-color:transparent;
+}
+.pic:hover .mask2{
+    animation: move 1s 1 forwards;
+}
+.pic .tiao{
+    position: absolute;
+    right: -4px;
+    top: 25px;
+    width: 4px;
+    height: 150px;
+    background-color: #fff;
+}
+.pic:hover .tiao{
+    animation: move1 1s 1 forwards;
+}
+.pic .text{
+    overflow: hidden;
+    height: 150px;
+    width: 221px;
+    position: absolute;
+    right: -221px;
+    top: 25px;
+    background-color:transparent;
+    color: white;
+}
+.pic .text h3{
+    margin-top: 10px;
+    font-size: 24px;
+    margin-left: 10px;
+}
+.pic .text h4{
+    font-weight: 400;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.pic .text h6{
+    font-size: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 400;
+}
+.pic:hover .mask{
+    display: block;
+}
+@keyframes move{
+    0%{
+        transform: translateX(0);
+        background-color: rgba(255,255,255,.3);
+    }
+    100%{
+        transform: translateX(-221px);
+        background-color: transparent;
+    }
+}
+@keyframes move1{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-229px);
+    }
+}
+@keyframes move2{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-221px);
+    }
+}
