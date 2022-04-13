@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight:400; 
+}
+body{
+    display: flex;
+    /* width: 100vw; */
+    height: 100vh;
+    background-color: #101F30;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    display: flex;
+    position: relative;
+    transform-style: preserve-3d;
+    flex-wrap: wrap;
+}
+.pic{
+    width: 100vw;
+    height: 100vh;
+    background: url(images/祥云花纹底层.png) no-repeat center center;
+    position: absolute;
+    z-index: 0;
+    background-size: 100% 100%;
+}
+section .card{
+    position: relative;
+    width: 250px;
+    height: 375px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    margin: 30px;
+}
+section .box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition:  1s ease;
+}
+section .box .img{
+    box-shadow: 0 2px 4px 2px rgba(255,255,255,.06);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+section .box .img img{
+    width: 100%;
+    height: 100%;
+}
+section .box .img:first-child{
+    box-shadow: 0 2px 4px 2px rgba(255, 255, 255, 0.1);
+}
+section .box .text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform:rotateY(180deg);
+}
+section .box .text div{
+    color: #fff;
+    padding: 20px;
+    background: linear-gradient(30deg , #609e96,#ec6649);
+    transform: translateZ(100px);
+}
+section .box .text div .pic{
+    position: absolute;
+    width: 80%;
+    height: 20%;
+    background: url(images/导出祥云.png) no-repeat;
+    transform: rotateY(180deg);
+}
+section .box .text div h2{
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+section .box .text div h6{
+    font-size: 15px;
+    text-align: justify;
+    margin-top: 5px;
+}
+.card:hover .box{
+    transform: rotateY(180deg);
+}
